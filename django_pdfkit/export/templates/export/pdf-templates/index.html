@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PDF Document</title>
+
+    <style type="text/css">
+        /* Documents */
+        @page { size: 8.5in 11in; margin: 1in }        
+        h1{
+            color: #0563c1;
+        }
+        p{
+            padding: 10px 0;
+        }
+        a:link { 
+            color: #0563c1; 
+            text-decoration: underline 
+        }
+    </style>
+
+</head>
+<body>
+    {% include "export/pdf-templates/_header.tpl.html" %}
+
+    {% if content %}
+        {% include "export/pdf-templates/_content.tpl.html" %}
+    {% endif %}
+
+    {% if footer %}
+        {% include "export/pdf-templates/_footer.tpl.html" %}
+    {% endif %}
+
+</body>
+</html>
